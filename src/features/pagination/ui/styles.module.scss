@@ -1,0 +1,89 @@
+@import 'src/shared/styles';
+
+.paginationWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.showMoreButton {
+  width: 240px;
+  height: 36px;
+
+  @include to(1024){
+    width: 100%;
+  }
+}
+
+.paginationList {
+  list-style-type: none;
+  display: flex;
+
+  @include to(1024){
+    display: none;
+  }
+}
+
+.paginationItem {
+  &:not(:last-child) {
+    margin: 0 4px 0 0;
+  }
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  color: $primary-blue;
+  background: transparent;
+  transition: none;
+
+  svg {
+    fill: $primary-blue;
+  }
+
+  &:disabled {
+    cursor: default;
+    background: transparent;
+
+    svg {
+      fill: $disabled;
+    }
+  }
+
+  &:hover {
+    color: $primary-blue-hover;
+    background: transparent;
+  }
+
+  &:focus-visible {
+    color: $primary-blue-hover;
+    background: transparent;
+  }
+}
+
+.paginationButtonActive {
+  background-color: $primary-blue;
+  color: $white;
+  cursor: default;
+  pointer-events: none;
+
+  &:hover {
+    color: $primary-blue-hover;
+    background: transparent;
+  }
+
+  &:focus-visible {
+    color: $primary-blue-hover;
+    background: transparent;
+  }
+}
+
+.paginationButtonEmpty {
+  cursor: default;
+}

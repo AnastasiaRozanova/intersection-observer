@@ -1,0 +1,31 @@
+@mixin to($to) {
+  @media (max-width: $to - 1) {
+    @content;
+  }
+}
+
+@mixin horizontal-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin hoverWithFocus() {
+  &:focus-visible {
+    @content;
+  }
+
+  :global(.keyboard) &:focus {
+    @content;
+  }
+
+  :global(.is-mouse) &:hover {
+    @content;
+  }
+}

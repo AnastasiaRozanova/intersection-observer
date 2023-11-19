@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  & > * {
+    width: calc((100% - 40px) / 3);
+  }
+}

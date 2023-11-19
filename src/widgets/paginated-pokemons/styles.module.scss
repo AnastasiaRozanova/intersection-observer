@@ -1,0 +1,40 @@
+@import 'src/shared/styles';
+
+.paginationSticky {
+  background: $white;
+  width: calc(100% + 64px);
+  padding: 0 72px;
+  margin: 0 -32px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 76px;
+
+  ul {
+    margin-right: -12px;
+  }
+
+  &.isScroll {
+    box-shadow: 0 8px 16px rgb(0 0 0 / 6%);
+  }
+
+  @include to($md) {
+    margin: -24px -32px 0;
+  }
+}
+
+.pokemonList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

@@ -1,0 +1,23 @@
+@import 'src/shared/styles';
+
+.pokemonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid $dark-grey;
+  padding: 1rem;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pokemonImage {
+  width: 40%;
+  max-width: 100px;
+  object-fit: contain;
+  object-position: center;
+}

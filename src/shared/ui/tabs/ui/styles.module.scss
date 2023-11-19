@@ -1,0 +1,48 @@
+@import 'src/shared/styles';
+
+.tabs {
+  position: relative;
+}
+
+.tabsHead {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1px solid $light-grey;
+    content: '';
+  }
+}
+
+.tabsNav {
+  display: flex;
+  column-gap: 24px;
+}
+
+.tabsButton {
+  position: relative;
+  white-space: nowrap;
+  transition: all .6s cubic-bezier(.215, .61, .355, 1);
+
+  &.isActive {
+    color: $primary-blue;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: $primary-blue;
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+}
+
+.tabsContent {
+  position: relative;
+}
