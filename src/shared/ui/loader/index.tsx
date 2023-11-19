@@ -1,3 +1,19 @@
-import './styles.module.scss';
+//@ts-ignore
+import styles from  './styles.module.scss';
 
-export const Loader = () => <span className="loader" />
+export const Loader = () => (
+		<div className={styles.ldsSpinner}>
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+			<div />
+		</div>
+)

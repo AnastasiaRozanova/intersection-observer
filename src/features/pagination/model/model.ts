@@ -1,5 +1,6 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { createGate } from 'effector-react';
+import { status } from 'patronum';
 
 import { pokemonModel } from '../../../entities/pokemon';
 import { IMAGE_PER_PAGE_LIMIT } from '../../../shared/config';
@@ -19,9 +20,11 @@ const getPokemons = async (offset: number) => {
 
 const getPokemonsByPage = createEvent<number>();
 const getPokemonsByPageFx = createEffect(getPokemons);
+const $getPokemonsByPageStatus = status({ effect: getPokemonsByPageFx });
 
 const loadMore = createEvent<number>();
 const loadMoreFx = createEffect(getPokemons);
+const $loadMoreStatus = status({ effect: loadMoreFx });
 
 sample({
     clock: Gate.open,
@@ -92,4 +95,11 @@ sample({
     target: $offset,
 });
 
-export const model = { loadMore, getPokemonsByPage, $count, $activePage };
+export const model = {
+    loadMore,
+    getPokemonsByPage,
+    $count,
+    $activePage,
+    $getPokemonsByPageStatus,
+    $loadMoreStatus
+};

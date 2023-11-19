@@ -2,6 +2,7 @@
 
 .tabs {
   position: relative;
+  height: 100%;
 }
 
 .tabsHead {
@@ -45,4 +46,9 @@
 
 .tabsContent {
   position: relative;
+  height: 100%;
+}
+
+.tabPanel {
+  height: 100%;
 }

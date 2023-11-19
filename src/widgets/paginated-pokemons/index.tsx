@@ -3,12 +3,18 @@ import { useUnit } from 'effector-react';
 import { Pagination, paginationModel } from '../../features';
 import { PokemonList } from '../../entities/pokemon';
 import { IMAGE_PER_PAGE_LIMIT } from '../../shared/config';
+import { Loader } from '../../shared/ui';
 //@ts-ignore
 import styles from './styles.module.scss';
 
 export const PaginatedPokemons: FC = () => {
     const ref = useRef<HTMLDivElement>(null);
-    const [total, activePage] = useUnit([paginationModel.$count, paginationModel.$activePage]);
+    const [total, activePage, loadMoreStatus, getPokemonsByPageStatus] = useUnit([
+        paginationModel.$count,
+        paginationModel.$activePage,
+        paginationModel.$loadMoreStatus,
+        paginationModel.$getPokemonsByPageStatus
+    ]);
 
     useLayoutEffect(() => {
         function scrollHandler(this: any) {
@@ -21,6 +27,8 @@ export const PaginatedPokemons: FC = () => {
         return () => document.removeEventListener('scroll', scrollHandler);
     }, [ref]);
 
+    const isLoading = loadMoreStatus === 'pending' || getPokemonsByPageStatus === 'pending';
+
     return (
         <>
             <Pagination
@@ -31,9 +39,15 @@ export const PaginatedPokemons: FC = () => {
                 className={styles.paginationSticky}
             />
 
-            <div className={styles.pokemonList}>
-                <PokemonList />
-            </div>
+            {isLoading ? (
+                <div className={styles.loaderWrap}>
+                    <Loader />
+                </div>
+            ) : (
+                <div className={styles.pokemonList}>
+                    <PokemonList />
+                </div>
+             )}
         </>
     );
 };
