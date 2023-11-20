@@ -4,21 +4,18 @@ import { useIntersectionObserser } from '../../shared/hooks';
 //@ts-ignore
 import styles from './styles.module.scss';
 
-type AnimationProps = {
-	isInView: boolean;
-	callback: () => void;
-}
-
-export const Animation = ({ isInView, callback }: AnimationProps) => {
+export const Animation = () => {
 	const divRef = useRef<HTMLDivElement>(null);
+	const boxRef = useRef<HTMLDivElement>(null);
 
-	useIntersectionObserser(divRef, callback);
+	const callback = () => boxRef.current?.classList.add('animate');
+	const elseCallback = () => boxRef.current?.classList.remove('animate');
+
+	useIntersectionObserser(divRef, callback, elseCallback);
 
 	return (
 			<div className={styles.animationWrap} ref={divRef}>
-				<div className={clsx(styles.box, isInView && styles.box_animate_2)}>
-					<div>Кликни и начнется анимация</div>
-				</div>
+				<div className={styles.box} ref={boxRef} />
 			</div>
 	)
 }

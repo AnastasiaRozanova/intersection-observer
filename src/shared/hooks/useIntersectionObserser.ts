@@ -1,6 +1,10 @@
 import { useEffect, RefObject } from "react";
 
-export const useIntersectionObserser = (ref: RefObject<HTMLElement>, callback: () => void) => {
+export const useIntersectionObserser = (
+		ref: RefObject<HTMLElement>,
+		callback: () => void,
+		elseCallback?: () => void
+) => {
 	useEffect(() => {
 		const { current: element } = ref;
 		if (element) {
@@ -8,6 +12,8 @@ export const useIntersectionObserser = (ref: RefObject<HTMLElement>, callback: (
 					([entry]) => {
 						if (entry.isIntersecting) {
 							callback();
+						} else {
+							elseCallback?.();
 						}
 					},
 					{ threshold: 0 },

@@ -8,3 +8,20 @@ body {
 code {
   font-family: 'Gilroy', 'Courier New', monospace;
 }
+
+:global(.animate) {
+  animation-name: example;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes example {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg)
+  }
+}

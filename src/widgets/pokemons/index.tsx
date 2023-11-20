@@ -11,7 +11,7 @@ export const Pokemons: FC = () => {
 
     return (
         <>
-          <Animation callback={animationModel.incrementViewNumber} />
+          <Animation />
           <InfinityScroll callback={paginationModel.loadMore}>
             <PokemonList />
           </InfinityScroll>
