@@ -11,6 +11,7 @@ sample({
 	target: $inViewNumber
 })
 
+
 export const model = {
 	$inViewNumber,
 	incrementViewNumber
