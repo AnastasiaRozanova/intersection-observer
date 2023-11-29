@@ -2,13 +2,12 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { Button, Icon } from '../../../shared/ui';
 import { ButtonProps } from '../lib';
-// @ts-ignore
 import styles from './styles.module.scss';
 
 export const LeftButton = ({ activePage, onPageChange, disabled }: ButtonProps) => (
     <li className={styles.paginationItem}>
         <Button
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className={styles.paginationButton}
             onClick={() => onPageChange(activePage - 1)}
         >
@@ -20,7 +19,7 @@ export const LeftButton = ({ activePage, onPageChange, disabled }: ButtonProps) 
 export const RightButton = ({ activePage, onPageChange, disabled }: ButtonProps) => (
     <li className={styles.paginationItem}>
         <Button
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className={styles.paginationButton}
             onClick={() => onPageChange(activePage + 1)}
         >

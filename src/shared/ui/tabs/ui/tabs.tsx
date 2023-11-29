@@ -1,7 +1,6 @@
 import React, { PropsWithChildren, useState } from 'react';
 import { clsx } from 'clsx';
 import { Button } from '../../button';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 interface TabsProps extends PropsWithChildren {

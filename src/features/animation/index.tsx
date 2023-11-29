@@ -1,9 +1,7 @@
-import { clsx } from 'clsx';
 import { useUnit } from 'effector-react';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useIntersectionObserser } from '../../shared/hooks';
 import { model } from './model';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 export const Animation = () => {

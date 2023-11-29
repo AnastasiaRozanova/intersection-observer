@@ -1,6 +1,5 @@
 import React, { CSSProperties, FC, useMemo } from 'react';
 import { clsx } from 'clsx';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 interface SkeletonProps {

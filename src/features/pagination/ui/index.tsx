@@ -4,7 +4,6 @@ import { Button } from '../../../shared/ui';
 import { EmptyButton, LeftButton, PageButton, RightButton } from './button-types';
 import { AccountPaginationProps, getPagination } from '../lib';
 import { model } from '../model/model';
-// @ts-ignore
 import styles from './styles.module.scss';
 
 const PAGES_TO_DISPLAY = 3;

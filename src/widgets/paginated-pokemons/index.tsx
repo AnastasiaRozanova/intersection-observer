@@ -4,7 +4,6 @@ import { Pagination, paginationModel } from '../../features';
 import { PokemonList } from '../../entities/pokemon';
 import { IMAGE_PER_PAGE_LIMIT } from '../../shared/config';
 import { Loader } from '../../shared/ui';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 export const PaginatedPokemons: FC = () => {

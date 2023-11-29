@@ -1,5 +1,4 @@
 import React, { FC, PropsWithChildren } from 'react';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 export interface TabProps extends PropsWithChildren {

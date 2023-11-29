@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout, PaginatedPokemons, Pokemons } from '../widgets';
 import { Tab, Tabs } from '../shared/ui';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 function App() {

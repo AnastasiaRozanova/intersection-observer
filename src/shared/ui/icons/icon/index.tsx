@@ -1,7 +1,6 @@
 import React, { CSSProperties, HTMLAttributes } from 'react';
 import clsx from 'clsx';
 import { IconId } from '../svg-sprite';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 export interface IconProps extends Omit<HTMLAttributes<SVGElement>, 'id'> {

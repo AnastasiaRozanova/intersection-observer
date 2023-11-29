@@ -1,6 +1,5 @@
 import { PropsWithChildren } from 'react';
 import { IconsSprite } from '../../shared/ui';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 interface LayoutProps extends PropsWithChildren {}

@@ -1,6 +1,5 @@
 import { HTMLAttributes, PropsWithChildren } from 'react';
 import { clsx } from 'clsx';
-//@ts-ignore
 import styles from './styles.module.scss';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement>, PropsWithChildren {

@@ -1,6 +1,5 @@
-import { FC, PropsWithChildren, useEffect, useRef } from 'react';
+import { FC, PropsWithChildren, useRef } from 'react';
 import { useIntersectionObserser } from '../../../shared/hooks';
-// @ts-ignore
 import styles from './styles.module.scss';
 
 type InfinityScrollProps = {
